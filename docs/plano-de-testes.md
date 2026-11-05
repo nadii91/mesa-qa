@@ -1,36 +1,22 @@
-# Plano de testes
+# Cenários de teste manual
 
-## Objetivo e abordagem
+Objetivo: verificar se uma pessoa consegue encontrar um produto e fazer uma compra simulada.
 
-Validar a jornada catálogo → carrinho → desconto → pedido simulado. Priorizar cálculos monetários e validação de entradas na API; verificar integração da jornada na interface. O estoque é fixo por pedido, sem concorrência ou persistência de pedidos.
+Abra a loja e use dados fictícios: Maria Teste e maria@example.com. Comece cada cenário com o carrinho vazio.
 
-Ambiente: Node.js 22+, navegador Chromium desktop (1440×1000) e móvel (390×844). Dados fictícios: Maria Teste, maria@example.com. Reinicie o estado removendo `mesa-cart` do armazenamento local do navegador.
+| ID | O que fazer | Resultado esperado |
+|---|---|---|
+| CT01 | Abrir a loja | Mostrar seis produtos |
+| CT02 | Clicar em Papelaria | Mostrar caderno e kit de canetas |
+| CT03 | Buscar Caneca | Mostrar somente Caneca Pausa |
+| CT04 | Buscar um nome inexistente | Mostrar mensagem de nenhum produto encontrado |
+| CT05 | Adicionar uma caneca e abrir a sacola | Mostrar uma caneca no carrinho |
+| CT06 | Remover a caneca | Mostrar carrinho vazio e impedir compra |
+| CT07 | Adicionar uma caneca e aplicar MESA10 | Mostrar total de R$ 69,81, já com frete |
+| CT08 | Aplicar o cupom FALSO | Mostrar mensagem de cupom inválido |
+| CT09 | Tentar adicionar o relógio esgotado | Botão desabilitado |
+| CT10 | Adicionar uma caneca e finalizar com os dados de teste | Confirmar pedido e esvaziar o carrinho |
+| CT11 | Tentar comprar sem preencher nome e e-mail | Impedir envio do formulário |
+| CT12 | Adicionar duas luminárias | Mostrar frete grátis |
 
-## Cenários manuais
-
-| ID | Prioridade | Ação | Resultado esperado |
-|---|---|---|---|
-| CT01 | Alta | Abrir catálogo | Seis produtos; relógio esgotado |
-| CT02 | Média | Selecionar Papelaria | Caderno e kit de canetas |
-| CT03 | Média | Buscar texto inexistente | Mensagem sem resultados |
-| CT04 | Média | Ordenar por menor preço | Kit Traço aparece primeiro |
-| CT05 | Alta | Adicionar caneca e recarregar | Uma unidade permanece na sacola |
-| CT06 | Alta | Tentar adicionar sete canecas | Limite de seis; mensagem no catálogo |
-| CT07 | Alta | Remover todos os itens | Carrinho vazio; checkout desabilitado |
-| CT08 | Alta | Uma caneca com MESA10 | Subtotal 59,90; desconto 5,99; frete 15,90; total 69,81 |
-| CT09 | Alta | Aplicar cupom inválido | Erro e nenhum desconto |
-| CT10 | Alta | Suporte + caneca, com MESA10 | Frete 15,90, pois valor após desconto é 197,82 |
-| CT11 | Alta | Duas luminárias | Frete grátis |
-| CT12 | Alta | Enviar formulário vazio ou e-mail inválido | Navegador impede envio |
-| CT13 | Alta | Finalizar com dados válidos | Confirmação, código e sacola vazia |
-| CT14 | Média | Abrir sacola por teclado e pressionar Escape | Modal fecha; foco retorna ao acionador |
-| CT15 | Média | Navegar em largura de 390 px | Conteúdo sem rolagem horizontal |
-| CT16 | Alta | Desligar servidor antes de confirmar | Erro visível, itens preservados, permite tentar novamente |
-
-## Critérios de conclusão
-
-Suítes unitária/API e E2E aprovadas; defeitos críticos resolvidos. Cenários manuais devem receber evidência antes de serem marcados como executados. Ter testes automatizados não comprova uma auditoria completa de acessibilidade, segurança ou desempenho.
-
-## Sessão exploratória proposta (30 minutos)
-
-Investigar mudanças rápidas de quantidade, busca e filtros combinados, desconto antes/depois de esvaziar sacola, restauração de armazenamento corrompido, navegação por teclado e falha de rede. Registrar ambiente, passos, observado, esperado e evidências. A sessão está proposta, não registrada como executada.
+Depois de executar, anote o ID, a data, o navegador e o resultado: **passou** ou **falhou**. Se falhar, use o modelo de bug e salve uma captura da tela. Esta tabela é um roteiro, não um registro de execução.

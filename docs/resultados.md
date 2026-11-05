@@ -1,14 +1,15 @@
-# Resultados de validação — 05/11/2026
+# Resultado dos testes
 
-Ambiente: Windows, Node.js 24.18.0, Playwright 1.56.1, Chromium 141.
+Execução local em 05/11/2026 com `npm test`, Windows, Node.js 24.18.0 e Cypress 16.2.1 (navegador Electron 146).
 
-| Suíte | Resultado |
-|---|---|
-| Regras de negócio e API — `npm test` | 17 aprovados; 0 falhas |
-| Navegação — `npm run test:e2e` | 12 aprovados; 0 falhas |
+| Arquivo | Passaram | Falharam |
+|---|---|---|
+| loja.cy.js | 12 | 0 |
+| api.cy.js | 6 | 0 |
+| Total | 18 | 0 |
 
-Os seis cenários E2E foram executados em dois tamanhos de viewport: desktop 1440×1000 e celular 390×844. Isso não equivale a testes em aparelhos físicos nem em Safari/Firefox.
+A suíte foi reduzida para focar nos cenários básicos de estudo. Os testes da tela usam tamanho de desktop; um cenário verifica a abertura e o fechamento do carrinho em 390 × 844. Isso não representa uma validação completa em celular.
 
-Captura de página completa: [preview.png](preview.png). Inspeção visual da captura desktop realizada. Plano manual e sessão exploratória permanecem como roteiro para execução; não foram declarados concluídos.
+Para consultar a execução mais recente no GitHub, abra a aba **Actions** do repositório.
 
-Houve bloqueio inicial da conexão local pelo ambiente de execução e conflito com o servidor de prévia; os testes foram repetidos com acesso local autorizado e servidor gerenciado pelo Playwright, resultando nas aprovações acima. Nenhuma execução no GitHub Actions foi confirmada; ela ocorrerá após a publicação no GitHub.
+Os cenários manuais são um roteiro para prática e não foram marcados como executados.

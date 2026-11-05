@@ -1,14 +1,20 @@
-# Modelo de relatório de bug
+# Modelo para registrar um bug
 
-Este é um modelo, não um defeito encontrado.
+Copie e preencha quando encontrar um problema. Este modelo não representa um bug já encontrado.
 
-- **Título:** ação + comportamento incorreto
-- **Ambiente:** sistema, navegador, versão e revisão do projeto
-- **Severidade e prioridade:** justificar impacto e urgência
-- **Pré-condições e dados:** apenas dados fictícios
-- **Passos para reproduzir:** numerados e mínimos
-- **Resultado esperado:** regra aplicável
-- **Resultado observado:** comportamento efetivamente visto
-- **Evidências:** captura, vídeo ou log sem dados pessoais
-- **Frequência:** ocorrências / tentativas
-- **Reteste:** revisão corrigida e resultado
+**Título:** resumo do problema.
+
+**Ambiente:** navegador e sistema usados.
+
+**Passos para reproduzir:**
+1. ...
+2. ...
+3. ...
+
+**Esperado:** o que deveria acontecer.
+
+**Encontrado:** o que aconteceu de verdade.
+
+**Impacto:** impede a compra ou atrapalha outra ação?
+
+**Evidência:** captura da tela ou vídeo.

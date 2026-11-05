@@ -1,5 +1,5 @@
 node_modules/
-playwright-report/
-test-results/
+cypress/screenshots/
+cypress/videos/
 .env
 *.log

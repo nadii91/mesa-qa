@@ -1,1 +1,20 @@
-{"name":"mesa-qa","version":"1.0.0","private":true,"type":"module","description":"Loja demonstrativa para portfólio de QA","scripts":{"start":"node server.js","test":"node --test tests/*.test.js","test:e2e":"playwright test"},"devDependencies":{"@playwright/test":"1.56.1"},"engines":{"node":">=22"}}
+{
+  "name": "mesa-qa",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Loja para praticar testes manuais e Cypress",
+  "scripts": {
+    "start": "node server.js",
+    "start:test": "node --env-file=.env.test server.js",
+    "test": "start-server-and-test start:test http-get://127.0.0.1:3001 cypress:run",
+    "test:open": "start-server-and-test start:test http-get://127.0.0.1:3001 cypress:open",
+    "cypress:run": "cypress run",
+    "cypress:open": "cypress open --e2e"
+  },
+  "devDependencies": {
+    "cypress": "16.2.1",
+    "start-server-and-test": "3.0.13"
+  },
+  "engines": { "node": "^22.0.0 || ^24.0.0 || >=26.0.0" }
+}

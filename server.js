@@ -25,4 +25,9 @@ export function createServer(){return http.createServer(async(req,res)=>{
   if(req.method!=='GET'||!files[pathname])return json(404,{error:'Não encontrado.'});
   try{const file=files[pathname];const content=await readFile(new URL('./public/'+file,import.meta.url));res.writeHead(200,{'Content-Type':file.endsWith('.css')?'text/css':file.endsWith('.js')?'text/javascript':'text/html; charset=utf-8'});res.end(content);}catch{json(500,{error:'Falha ao carregar página.'});}
 });}
-if(process.argv[1]===fileURLToPath(import.meta.url))createServer().listen(Number(process.env.PORT)||3000,'127.0.0.1',()=>console.log('Loja disponível em http://127.0.0.1:3000'));
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  const port = Number(process.env.PORT) || 3000;
+  createServer().listen(port, '127.0.0.1', () => {
+    console.log(`Loja disponível em http://127.0.0.1:${port}`);
+  });
+}
