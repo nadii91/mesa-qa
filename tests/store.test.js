@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {totals,normalizeCart,validateOrder} from '../public/store.js';
+test('carrinho vazio não cobra frete',()=>assert.deepEqual(totals({}),{subtotal:0,discount:0,shipping:0,total:0}));
+test('frete de R$15,90 abaixo do limite',()=>assert.equal(totals({cup:1}).total,7580));
+test('frete grátis acima de R$200',()=>assert.equal(totals({lamp:2}).shipping,0));
+test('cupom arredonda centavos e não acumula',()=>assert.deepEqual(totals({notebook:1},' mesa10 '),{subtotal:3990,discount:399,shipping:1590,total:5181}));
+test('limiar de frete considera desconto',()=>{assert.equal(totals({stand:1,notebook:1,pens:1},'MESA10').shipping,0);assert.equal(totals({stand:1,cup:1},'MESA10').shipping,1590);});
+test('cupom desconhecido não concede desconto',()=>assert.equal(totals({cup:1},'INVALIDO').discount,0));
+test('restauração descarta dados inválidos e limita estoque',()=>assert.deepEqual(normalizeCart({lamp:999,cup:-1,clock:1,pens:1.5,unknown:4}),{lamp:8}));
+test('restauração aceita dados corrompidos sem falha',()=>{assert.deepEqual(normalizeCart(null),{});assert.deepEqual(normalizeCart([]),{});});
+test('checkout exige itens e dados válidos',()=>{assert.ok(validateOrder({},{}));assert.ok(validateOrder({cup:1},{name:'Ab',email:'a@b.com'}));assert.ok(validateOrder({cup:1},{name:'Teste',email:'invalido'}));assert.equal(validateOrder({cup:1},{name:'Teste',email:'a@example.com'}),null);});
