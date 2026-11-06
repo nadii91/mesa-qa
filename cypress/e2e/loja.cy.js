@@ -1,6 +1,4 @@
-// describe agrupa os testes. Cada it representa um cenário.
 describe('Loja Mesa', () => {
-  // Abre a loja antes de cada teste. O Cypress limpa o estado entre testes.
   beforeEach(() => {
     cy.visit('/');
   });

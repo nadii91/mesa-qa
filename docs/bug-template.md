@@ -1,20 +1,40 @@
-# Modelo para registrar um bug
+# Registro de defeito
 
-Copie e preencha quando encontrar um problema. Este modelo não representa um bug já encontrado.
+Modelo de registro. Nenhum defeito é declarado neste documento.
 
-**Título:** resumo do problema.
+| Campo | Registro |
+|---|---|
+| ID | — |
+| Título | — |
+| Caso de teste relacionado | — |
+| Data | — |
+| Ambiente e navegador | — |
+| Versão ou commit | — |
+| Severidade | — |
+| Status | — |
 
-**Ambiente:** navegador e sistema usados.
+## Pré-condições
 
-**Passos para reproduzir:**
-1. ...
-2. ...
-3. ...
+—
 
-**Esperado:** o que deveria acontecer.
+## Passos para reproduzir
 
-**Encontrado:** o que aconteceu de verdade.
+1. —
+2. —
+3. —
 
-**Impacto:** impede a compra ou atrapalha outra ação?
+## Resultado esperado
 
-**Evidência:** captura da tela ou vídeo.
+—
+
+## Resultado obtido
+
+—
+
+## Evidências
+
+—
+
+## Reteste
+
+Data, versão validada e resultado: —

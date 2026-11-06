@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Loja para praticar testes manuais e Cypress",
+  "description": "Portfólio de QA com casos de teste e automação Cypress para uma loja virtual",
   "scripts": {
     "start": "node server.js",
     "start:test": "node --env-file=.env.test server.js",

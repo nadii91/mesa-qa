@@ -1,4 +1,3 @@
-// cy.request testa a API diretamente, sem clicar na tela.
 describe('API da loja', () => {
   it('retorna o catálogo com sucesso', () => {
     cy.request('/api/products').then((resposta) => {

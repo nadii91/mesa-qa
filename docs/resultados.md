@@ -8,8 +8,8 @@ Execução local em 05/11/2026 com `npm test`, Windows, Node.js 24.18.0 e Cypres
 | api.cy.js | 6 | 0 |
 | Total | 18 | 0 |
 
-A suíte foi reduzida para focar nos cenários básicos de estudo. Os testes da tela usam tamanho de desktop; um cenário verifica a abertura e o fechamento do carrinho em 390 × 844. Isso não representa uma validação completa em celular.
+Os testes de interface usam resolução de 1280 × 900. O CT12 verifica a abertura e o fechamento do carrinho em 390 × 844. Não houve execução em aparelho móvel físico.
 
-Para consultar a execução mais recente no GitHub, abra a aba **Actions** do repositório.
+[Execução validada no GitHub Actions](https://github.com/nadii91/mesa-qa/actions/runs/42132127331): concluída com sucesso em 05/11/2026. Esse registro corresponde à versão da suíte executada naquela data; não representa automaticamente o status de alterações posteriores.
 
-Os cenários manuais são um roteiro para prática e não foram marcados como executados.
+Os resultados acima correspondem à automação. A execução manual dos casos documentados não foi registrada. Resultado esperado e resultado obtido são mantidos separadamente para não declarar validações sem evidência.
