@@ -2,8 +2,6 @@
 
 Neste projeto, reúno a documentação de casos de teste e a automação com **Cypress e JavaScript** para uma loja virtual demonstrativa. O objetivo é validar a busca de produtos, o carrinho, os descontos e a finalização de pedidos.
 
-**Responsável:** [Nadine Amaral — @nadii91](https://github.com/nadii91)
-
 ![Loja Mesa](docs/preview.png)
 
 ## Escopo dos testes
